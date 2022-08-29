@@ -1,0 +1,106 @@
+
+.popup .overlay{
+    position: fixed;
+    top:0px;
+    left:0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup .content{
+    position: fixed;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%) scale(0);
+    background-color: #fff;
+    width: 75%;
+    height: 75%;
+    z-index: 2;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+.popup .close-btn{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right:10px;
+    border-radius:50%;
+    background-color: #000;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 25px;
+    font-size: 25px;
+}
+
+.popup.active .overlay{
+    display: block;
+}
+
+.popup.active .content{
+    transform: all 300ms ease-in-out;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.card-flip-wrapper{
+    display: block;
+    position: relative;
+    width: 250px;
+    height: 300px;
+}
+
+.card-flip-wrapper .card{
+    /* background-color: purple; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    box-shadow:0 0 15px rgba(0,0,0,.3) ;
+}
+.card-flip-wrapper:hover .card{
+    transform: rotateY(180deg);
+}
+
+.card-flip-wrapper .the-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: gray;
+    color: #333;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.card-flip-wrapper .the-front{
+    position: absolute;
+    text-align: center;
+    /* transform: translate(7%);  */
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    color: #000;
+}
+.card-flip-wrapper .card-header{
+    color: #000;
+}
+
+.card-flip-wrapper .alt{
+    font-size: smaller;
+    text-align: center;
+    width: 100%;
+    /* background-color: green; */
+}
+
