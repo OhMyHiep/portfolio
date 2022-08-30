@@ -1,11 +1,17 @@
 
 
-function togglePopup(){
-    document.getElementById("popup-1").classList.toggle("active");
+function togglePopup(button){
+    
+    let buttonNum=button.id.substring(1,2);
+    
+    document.getElementById("popup-"+buttonNum).classList.toggle("active");
 }
 
-let closeBtn=document.getElementById("close-btn");
+let closeBtns=document.getElementsByClassName("close-btn");
 
-if (closeBtn){
-    closeBtn.addEventListener("click",togglePopup)
+if (closeBtns){
+    for(let closeBtn of closeBtns){
+        console.log(closeBtn);
+        closeBtn.setAttribute("onclick","togglePopup(this)");
+    }
 }

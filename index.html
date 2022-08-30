@@ -17,11 +17,40 @@
 		<div class="popup" id="popup-1">
 			<div class="overlay" ></div>
 			<div class="content">
-				<div class="close-btn" id="close-btn">&times;</div>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque placeat in nihil delectus recusandae totam molestias ut ipsam laudantium repellendus accusantium exercitationem eaque, debitis porro dolorum, et explicabo dolores rem.</p>					
+				<div class="close-btn" id="p1-close-btn">&times;</div>
+				<div class="gif" id="p1-gif"></div>
+				<div class="side-panel">
+					<h3 class="header" id="p1-popup-header">Employee Reimbursement System</h3>
+					<a class="btn source-code-btn" id="p1-source-code-btn" href="https://github.com/OhMyHiep/project1">Source Code</a>
+				</div>
+				
 			</div>
 		</div>
 
+		<div class="popup" id="popup-2">
+			<div class="overlay" ></div>
+			<div class="content">
+				<div class="close-btn" id="p2-close-btn">&times;</div>
+				<div class="gif" id="p2-gif"></div>
+				<div class="side-panel">
+					<h3 class="header" id="p2-popup-header">Bug Blast</h3>
+					<a class="btn source-code-btn" id="p2-source-code-btn" href="https://github.com/OhMyHiep/project2">Source Code</a>
+				</div>
+				
+			</div>
+		</div>
+		<div class="popup" id="popup-3">
+			<div class="overlay" ></div>
+			<div class="content">
+				<div class="close-btn" id="p3-close-btn">&times;</div>
+				<div class="gif" id="p3-gif"></div>
+				<div class="side-panel">
+					<h3 class="header" id="p3-popup-header">Quizard</h3>
+					<a class="btn source-code-btn" id="p3-source-code-btn" href="https://github.com/OhMyHiep/Java-Quiz-Application">Source Code</a>
+				</div>
+				
+			</div>
+		</div>
 		<!-- Header -->
 			<section id="header">
 				<header>
@@ -69,7 +98,7 @@
 										<h2></h2>
 										<p>About Me</p>
 									</header>
-									<p>I initially chose my computer science major just to see and I found I have a great affinity for sofware developement. I've built applications with engineering teams through an agile development, some of which are demonstrated below. </p>
+									<p>I initially chose my computer science major just to see and I found I have a great affinity for sofware developement. I've built robust applications with engineering teams following agile development, some of which are demonstrated below. </p>
 								</div>
 							</section>
 
@@ -115,33 +144,74 @@
 										<article>
 											<div class="inner">
 												<h4>Bug Blast</h4>
-												<span>A light bug tracking platform that allows users to submit, assign, and track bugs for whatever software they are using.
-													<br><span><strong>Responsibilities</strong></span>
-													<ul>
-														<li >Design Project Structure</li>
-														<li >Implement Frontend To Add a Bug Report</li>
-														<li >Create Backend CRUD Functions For Bug Entity</li>
-														<li >Tested The Application With TestNG, Behave, Selenium And Postman</li>
-													</ul>
-												</span>
-												<span><strong>Technologies: <br></strong>Javalin, Java, JavaScript, HTML, CSS, PostgreSQL, Postman, TDD, Selenium</span>
+												<span>A light bug tracking platform that allows users to submit, assign, and track bugs for whatever software they are using.</span>
 											</div>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<div class="image card-flip-wrapper"><!--the image class is important-->
+												<!-- <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a> -->
+												<div class="card" id="p2-card">
+													<div class="the-front">
+														<div class="background" id="p2-background"></div>
+														<div class="text-wrapper front-text-wrapper">
+															<strong class="card-header front-header" id="p2-front-header">Technologies: </strong>										
+															<ul class="alt">
+																<li>Java + TestNG + Javalin</li>
+																<li>JavaScript + HTML + CSS </li>
+																<li>PostgresSQL</li>
+																<li>Cucumber + Selenium</li>
+																<li>Postman</li>
+															</ul>
+														</div>
+													</div>
+													<div class="the-back">
+														<div class="text-wrapper back-text-wrapper">
+															<strong class="card-header back-header">Responsibilities: </strong>
+															<ul class="alt">
+																<li>Design RESTful Project Structure</li>
+																<li>Implement Frontend To Add a Bug Report</li>
+																<li>Create Backend CRUD Functions For Bug Entity</li>
+																<li>Tested The Application With TestNG, Cucumber, Selenium And Postman</li>
+															</ul>
+														</div>
+														<a class="btn quick-demo-btn" id="p2-demo-btn" onclick="togglePopup(this)">Quick Demo</a>
+													</div>
+												</div>
+											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<div class="image card-flip-wrapper"><!--the image class is important-->
+												<!-- <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a> -->
+												<div class="card" id="p1-card">
+													<div class="the-front">
+														<div class="background" id="p1-background"></div>
+														<div class="text-wrapper front-text-wrapper">
+															<strong class="card-header front-header" id="p1-front-header">Technologies: </strong>										
+															<ul class="alt">
+																
+																<li>JavaScript + HTML + CSS</li>
+																<li>Python + Pytest + Flask</li>
+																<li>PostgresSQL</li>
+																<li>Behave + Selenium</li>
+																<li>Postman</li>
+															</ul>
+														</div>
+													</div>
+													<div class="the-back">
+														<div class="text-wrapper back-text-wrapper">
+															<strong class="card-header back-header">Responsibilities: </strong>
+															<ul class="alt">
+																<li>Implemented Front End Functionalities Such As The Navigation Bar </li>
+																<li>Implemenented Backend CRUD Functions</li>
+																<li>Designed Database Schema</li>
+																<li>Tested The Application With Pytest, Behave, Selenium And Postman</li>
+															</ul>
+														</div>
+														<a class="btn quick-demo-btn" id="p1-demo-btn" onclick="togglePopup(this)">Quick Demo</a>
+													</div>
+												</div>
+											</div>
 											<div class="inner">
 												<h4>Employee Reimbursement System</h4>
-												<span>The Employee Reimbursement System, ERS, allows employees to submit reimbursements for business expenses that can be approve or decline by the manager.
-													<br><span><strong>Responsibilities</strong></span>
-													<ul>
-														<li>Implemented Front End Functionalities Such As The Navigation Bar </li>
-														<li>Implemenented Backend CRUD Functions</li>
-														<li>Designed Database Schema</li>
-														<li>Tested The Application With Pytest, Behave, Selenium And Postman</li>
-													</ul>
-												</span>
-												<span><strong>Technologies: <br></strong>JavaScript, HTML, CSS, PostgresSQL, Python, Flask, Postman, Selenium</span>
+												<span>The Employee Reimbursement System, ERS, allows employees to submit reimbursements for business expenses that can be approve or decline by the manager.</span>
 											</div>
 										</article>
 										<article>
@@ -153,29 +223,33 @@
 											</div>
 											<div class="image card-flip-wrapper"><!--the image class is important-->
 												<!-- <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a> -->
-												<div class="card">
+												<div class="card" id="p3-card">
 													<div class="the-front">
-														<strong class="card-header">Technologies: </strong>
-														<ul class="alt">
-															<li> Java + JSTL</li>
-															<li>SpringMVC + JDBC</li>
-															<li>SpringBoot + Hibernate</li>
-															<li>mySQL</li>
-														</ul>
+														<div class="background" id="p3-background"></div>
+														<div class="text-wrapper front-text-wrapper">
+															<strong class="card-header front-header" id="p3-front-header">Technologies: </strong>										
+															<ul class="alt">
+																<li> Java + JSTL</li>
+																<li>SpringMVC + JDBC</li>
+																<li>SpringBoot + Hibernate</li>
+																<li>mySQL</li>
+															</ul>
+														</div>
 													</div>
 													<div class="the-back">
-														<strong class="card-header">Responsibilities: </strong>
-														<ul class="alt">
-															<li>Use JSTL To Implement Frontend</li>
-															<li>Implemenented Backend CRUD Functions</li>
-															<li>Designed Database Schema</li>
-														</ul>
-														<a onclick="togglePopup()">Demo</a>
+														<div class="text-wrapper back-text-wrapper">
+															<strong class="card-header back-header">Responsibilities: </strong>
+															<ul class="alt">
+																<li>Use JSTL To Implement Frontend</li>
+																<li>Implemenented Backend CRUD Functions</li>
+																<li>Designed Database Schema</li>
+															</ul>
+														</div>
+														<a class="btn quick-demo-btn" id="p3-demo-btn" onclick="togglePopup(this)">Quick Demo</a>
 													</div>
 												</div>
 											</div>
 											
-
 											
 										</article>
 									</div>
