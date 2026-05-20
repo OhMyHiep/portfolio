@@ -122,6 +122,7 @@
 				});
 
 		// Title Bar.
+		if ($header.length && $('#logo').length) {
 			$titleBar = $(
 				'<div id="titleBar">' +
 					'<a href="#header" class="toggle"></a>' +
@@ -130,7 +131,7 @@
 			)
 				.appendTo($body);
 
-		// Panel.
+			// Panel.
 			$header
 				.panel({
 					delay: 500,
@@ -142,6 +143,9 @@
 					target: $body,
 					visibleClass: 'header-visible'
 				});
+		} else {
+			$titleBar = $();
+		}
 
 	// Scrolly.
 		$('.scrolly').scrolly({
@@ -157,3 +161,52 @@
 		});
 
 })(jQuery);
+/* Custom resume modal behavior */
+document.addEventListener('DOMContentLoaded', function () {
+    var resumeButtons = [
+        document.getElementById('resume-preview'),
+        document.getElementById('resume-preview-card')
+    ];
+    var modal = document.getElementById('resume-modal');
+    var closeButton = document.getElementById('resume-modal-close');
+
+    function openModal() {
+        if (modal) {
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function closeModal() {
+        if (modal) {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    resumeButtons.forEach(function (button) {
+        if (button) {
+            button.addEventListener('click', function () {
+                openModal();
+            });
+        }
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+
+    if (modal) {
+        modal.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal && modal.classList.contains('open')) {
+            closeModal();
+        }
+    });
+});
